@@ -1,0 +1,364 @@
+/*Datos generales*/
+:root {
+    /*Folores*/
+	--blue: #0A3871;
+	--grey: #495057;
+	--greyDark: #343A40;
+	--lightBlue: #F3F5FC;
+	--2lightBlue: #D8DFE8;
+    --white: #FFFFFF;
+
+    /*Fuente*/
+    --fuentePrincipal: 'Inter', sans-serif;
+
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: max(100%, 1490px);
+    border: 2px solid green;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--lightBlue);
+    font-family: var(--fuentePrincipal);
+    width: 100%;
+    /*width: max(100%, 1490px);*/
+    border: 2px solid red;
+    position: relative;
+}
+@media (max-width: 768px) {
+    #body {
+        min-height: 100vh;
+        margin: 0;
+    }
+}
+
+
+
+/*Header*/
+#header {
+    margin: 40px 0px 0px 40px;
+    /* border: 1px solid; */
+    width: 40px;
+    height: 48px;
+    position: fixed;
+}
+
+/*responsive Header*/
+@media (max-width: 768px) {
+    #header {
+        margin: 40px 0px 0px 20px;
+        position: relative;
+        
+    }
+}
+
+
+
+/*Main*/
+#contenedor_total {
+    /*width: 1440px;*/
+    width: 100%;
+    /*heigth: 1024px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;*/
+    
+    /*División de pantalla*/
+    display: grid;
+    /*una zona 70% y otra 30%*/
+    grid: 70% 30% / 70% 30%;
+    
+}
+/*responsive Main*/
+@media (max-width: 768px) {
+    #contenedor_total {
+        grid-template-columns: 1fr;
+        grid-template-rows: 70% 10% 20%;
+    }
+}
+@media (max-width: 390px) {
+    #contenedor_total{
+        display: block;
+        background-color: red;
+    }
+}
+
+
+/*Contenedor izquierdo*/
+#contenedor_left {
+    display: grid;
+    grid-template-rows: 70% 30%;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    
+}
+/*Responsive contenedor izquierdo*/
+@media (max-width: 768px) {
+    #contenedor_left {
+        display: grid;
+        grid-template-rows: auto 13%;
+        grid-row: 1 / 3;
+    }
+}
+
+
+/*Contenedor del textarea*/
+.texto-inicial { 
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin: 168px 45px 0px 240px;
+}
+/*Responsive contenedor del textarea*/
+@media (max-width: 768px) {
+    .texto-inicial {
+        margin: 16.5% 2% 0% 2%;
+    }
+}
+
+
+/*Textarea dentro del contenido izquierdo*/
+.texto {
+    width: 99%;
+    /*border: 1px solid green;*/
+    height: auto;
+    resize: none;
+    font-family: var(--fuentePrincipal);
+    color: var(--blue);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+/*Responsive textarea*/
+@media (max-width: 768px) {
+    .texto {
+        width:100%;
+        font-size: 80px;
+    }
+}
+
+.texto::placeholder {
+    color: var(--blue);    
+}
+
+
+.texto:focus{
+    outline:none;
+}
+
+
+
+/*BOTONES*/
+.botones_encriptadores {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: end;
+    margin: 0px 0px 35px 240px;
+    
+}
+/*Responsive botones encriptadores*/
+@media (max-width: 768px) {
+    .botones_encriptadores {
+        grid-row: 2 / 3;
+        width: 97%;
+        margin: 0 auto;
+    }
+}
+
+.boton_enncriptar,.boton_desenncriptar,.boton_copiar {
+	width: 100%;
+	max-width: 328px;
+	min-width: 160px;
+	height: 67px;
+	font-size: 16px;
+	border-radius: 24px;
+	border: none;
+	outline: 1px solid var(--blue);
+	background: var(--blue);
+	color: var(--white);
+}
+@media (max-width: 768px) {
+    .boton_enncriptar,
+    .boton_desenncriptar,
+    .boton_copiar {
+        width: 100%;
+        max-width: 100%;
+	    /*min-width: 100%;*/
+        height: 90%;
+        font-size: 50px;
+    }
+}
+
+.boton_desenncriptar {
+	background: var(--2lightBlue);
+	color: var(--blue);
+    margin-left: 20px;
+}
+
+.contenedor_copiar {
+    display: flex;
+    justify-content: center;
+}
+
+.boton_copiar{
+	background: none;
+	color: var(--blue);
+	width: 100%;
+	min-width: 100px;
+    margin-bottom: 35px;
+}
+
+.boton_desenncriptar, .boton_copiar:hover {
+    cursor: pointer;
+}
+
+.ocultar_boton-copiar {
+    display: none;
+}
+
+
+/*Información*/
+.info_exclamacion {
+	text-align: left;
+	font-size: 12px;
+	color: var(--grey);
+    /*margin-top: auto;
+    align-items: center;*/
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: end;
+    margin: 0px 0px 12% 240px;
+}
+/*Responsive información*/
+@media (max-width: 768px) {
+    .info_exclamacion {
+        grid-row: 2 / 3;
+        width: 100%;
+        margin: 0px 2% 10% 2%;
+        font-size: 20px;
+    }
+}
+
+.info img {
+    width: 100%;
+}
+
+
+
+/*Contenedor derecho*/
+#contenedor_right {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    margin: 40px 40px 0px 0px;
+    background-color: var(--white);
+    border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px #00000014;
+}
+/*Responsive contenedor derecho*/
+@media (max-width: 768px) {
+    #contenedor_right {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        margin: 40px 30px 0px 30px;
+    }
+}
+
+#resultado_final {
+    width: 90%;
+    margin: 10px auto 0 auto;
+}
+.toy {
+    width: 100%;
+    margin: 50% auto;
+}
+
+.resultado_texto {
+	width: 100%;
+	font-size: 32px;
+	color: var(--greyDark);
+	border: none;
+	outline: none;
+	text-align: center;
+	overflow: hidden;
+	resize: none;
+	pointer-events: none;
+	font-family: var(--fuentePrincipal);
+}
+.resultado_texto::placeholder{
+	color: var(--greyDark);
+    font-weight: bold;
+    
+}
+
+.resultado_informativo {
+    width: 90%;
+    margin: 0 auto;
+}
+.resultado_informativo p {
+    margin: 0 auto;
+    font-family: var(--fuentePrincipal);
+    font-size: 16px;
+    color: var(--greyDark);
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .resultado_informativo p{
+        font-size: 25px;
+    }
+}
+@media (max-width: 768px) {
+    #resultado_final {
+        width: 50%;
+        margin: 30px auto;
+        font-size: 34px; 
+    }
+    .ocultar_toy, .toy {
+        display: none;
+    }
+    .resultado_texto {
+        margin: 0 auto;
+        font-size: 40px;
+    }
+}
+    
+
+
+/*FOOTER*/
+#pie {
+    width: 1448px;
+    height: auto;
+}
+#pie p {
+    font-family: var(--fuentePrincipal);
+    color: var(--grey);
+    text-align: center;
+    margin: 2%
+}
+
+@media (max-width: 768px) {
+    #pie, 
+    #pie p{
+        font-size: 32px;
+    }
+}
+@media (max-width: 390px) {
+    background-color: green;
+    }
+}
+
