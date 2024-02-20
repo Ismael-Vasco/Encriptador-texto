@@ -10,17 +10,17 @@
         <title>Encriptador</title>
 
         <link href="css/reset.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
        
     </head> <!-- cierre de la etiqueta informativa -->
         
     <body>
-        
         <header id="header">
-                <img class="logo" src="img/Logo2.png" alt="logo de alura">
+                <img class="logo" src="img/Logo2.png" alt="logo de alura">   
         </header> <!-- cierre del header-->
 
         <main id="contenedor_total">
@@ -31,16 +31,17 @@
                     <textarea class="texto" rows="15" cols="40" placeholder="Ingrese el texto aqui"></textarea>
                 </div><!-- cierre del textarea-->
                 
-                
-                <div class="info_exclamacion">
-                     <p><img src="img/exclamacion.svg" alt="informacion">  Solo letras minúsculas y sin acentos</p>
-                </div><!-- cierre del informativo-->
-                
-                
-                <div class="botones_encriptadores">
-                    <input class="boton_enncriptar" type="button" value="Encriptar">
-                    <input class="boton_desenncriptar" type="button" value="Desenncriptar">
-                </div><!-- cierre de los botones encriptadores-->
+                <div class="contenedor_botones-info">
+                    <div class="info_exclamacion">
+                         <p><img src="img/exclamacion.svg" alt="informacion">  Solo letras minúsculas y sin acentos</p>
+                    </div><!-- cierre del informativo-->
+                    
+                    
+                    <div class="botones_encriptadores">
+                        <input class="boton_enncriptar" type="button" value="Encriptar">
+                        <input class="boton_desenncriptar" type="button" value="Desenncriptar">
+                    </div><!-- cierre de los botones encriptadores-->
+                </div>
             </div><!-- cierre del contenedor izquierda-->
             
 
@@ -48,7 +49,7 @@
                 
                 <div id="resultado_final">
                     <img class="toy ocultar_toy" src="img/Muñeco.png" alt="muñeco con lupa">
-                    <textarea class="resultado_texto" placeholder="Ningún mensaje fue encontrado"></textarea>
+                    <textarea class="resultado_texto" rows="4" col="10" placeholder="Ningún mensaje fue encontrado"></textarea>
                 </div> <!-- cierre dela zona de resultado-->
                 
                 
