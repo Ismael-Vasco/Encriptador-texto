@@ -24,7 +24,6 @@ body {
 /*Header*/
 #header {
     margin: 40px 0px 0px 40px;
-    border: 1px solid red;
     width: 40px;
     height: 48px;
     position: fixed;   
