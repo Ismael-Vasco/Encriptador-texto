@@ -33,15 +33,23 @@ const matrizCondiciones2 = [
 
 // Función verificación de caracteres, mayusculas y acentos
 function caracteres(texto){
+    var valor = "";
     if (caracteresEspeciales.test(texto)){
-        return true;
-    }else if(mayusculas.test(texto)){
-        return true;
-    }else if(acentos.test(texto)){
-        return true;
-    }else {
-        return false;
+        valor=true;
+         //console.log(`hay carecteres especiales: ${valor}`);
     }
+    
+    if(mayusculas.test(texto)){
+        valor=true;
+        //console.log(`hay mayusculas: ${valor}`);
+    }
+    
+    if(acentos.test(texto)){
+        valor=true;
+        //console.log(`hay acentos: ${valor}`);
+    }
+    
+    return valor;
 }
 
 //aumentar el tamaño automatico del textarea
@@ -81,34 +89,44 @@ function botonEncriptar(){
     console.log(`hay mayusculas: ${mayusculas.test(textoInicial.value)}`);
     console.log(`hay acentos: ${acentos.test(textoInicial.value)}`);
     */
-    var trueFalse = false;
-    trueFalse = caracteres(textoInicial.value);
-    console.log(trueFalse);
-    
-    if(trueFalse){
-        alert("Estas ingresando mayusculas o caracteres especiales");
-        var trueFalse = "";
-    }else{
+    if (caracteres(textoInicial.value)){
+        Swal.fire({
+          title: "Corrige!",
+          text: "Puede haber acentos, mayusculas o caracteres especiales en el texto que ingresaste!",
+          icon: "error"
+        });
+        
+        //alert("hay acentos, matusculas o caract especial");
+    }
+    else if (caracteres(textoInicial.value)==false){
+        //console.log("dentro del segundo if de bton encriptar");
         const botonEncriptar = encriptar(textoInicial.value);
         textoEncriptado.value = botonEncriptar;
         ampliarTextare();
         ocultar();
-        var trueFalse = "";
-    };
+    }
+    
+
+ 
 }
 
 // Funcionalidad al boton desencriptar
 function botonDesencriptar(){
-    if(caracteresEspeciales.test(textoInicial.value)){
-        alert("Estas ingresando caracteres especiales");
-    }else if(mayusculas.test(textoInicial.value)){
-        alert("Estas ingresando mayusculas")
-    }else{
+    if(caracteres(textoInicial.value)){
+        Swal.fire({
+          title: "Corrige!",
+          text: "Puede haber acentos, mayusculas o caracteres especiales en el texto que ingresaste!",
+          icon: "error"
+        });
+        //alert("hay acentos, matusculas o caract especial");
+    }
+    else if(caracteres(textoInicial.value)==false){
         const botonDesencriptar = desencriptar(textoInicial.value);
         textoEncriptado.value = botonDesencriptar;
         ampliarTextare();
         ocultar();
-    };
+    }
+        
     /*
     console.log(caracteresEspeciales.test(textoInicial.value));
     console.log(mayusculas.test(textoInicial.value));
@@ -146,7 +164,7 @@ function encriptar(fraseInicial){
             fraseInicial = fraseInicial.replaceAll(
                 matrizCondiciones[i][0], 
                 matrizCondiciones[i][1])
-        };
+            };
     }
     return fraseInicial;
 }
