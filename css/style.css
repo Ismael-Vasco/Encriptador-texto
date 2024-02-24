@@ -2,6 +2,7 @@
 :root {
     /*Folores*/
 	--blue: #0A3871;
+    --darkBlue: #072B61;
 	--grey: #495057;
 	--greyDark: #343A40;
 	--lightBlue: #F3F5FC;
@@ -24,6 +25,7 @@ body {
 /*Header*/
 #header {
     margin: 40px 0px 0px 40px;
+    /*border: 1px solid red;*/
     width: 40px;
     height: 48px;
     position: fixed;   
@@ -150,6 +152,13 @@ body {
 .contenedor_botones-info {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    /* nuevo */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    margin-bottom: 30px;
 }
 .botones_encriptadores {
     /*grid-column: 1 / 2;
@@ -188,6 +197,10 @@ body {
 	outline: 1px solid var(--blue);
 	background: var(--blue);
 	color: var(--white);
+    transition: 1s all;
+}
+.boton_enncriptar:hover {
+    background: var(--darkBlue);
 }
 
 .boton_desenncriptar {
@@ -273,7 +286,7 @@ body {
 }
 
 .ocultar_boton-copiar {
-    /*display: none;*/
+    display: none;
 }
 
 
