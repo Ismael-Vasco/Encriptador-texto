@@ -28,7 +28,7 @@
             <div id="contenedor_left">
                 
                 <div class="texto-inicial">
-                    <textarea class="texto" rows="15" cols="40" placeholder="Ingrese el texto aqui"></textarea>
+                    <textarea class="texto" rows="15" cols="40"; placeholder="Ingrese el texto aqui"></textarea>
                 </div><!-- cierre del textarea-->
                 
                 <div class="contenedor_botones-info">
@@ -38,8 +38,8 @@
                     
                     
                     <div class="botones_encriptadores">
-                        <input class="boton_enncriptar" type="button" value="Encriptar">
-                        <input class="boton_desenncriptar" type="button" value="Desenncriptar">
+                        <input class="boton_enncriptar" onclick=botonEncriptar(); type="button" value="Encriptar">
+                        <input class="boton_desenncriptar" onclick=botonDesencriptar(); type="button" value="Desenncriptar">
                     </div><!-- cierre de los botones encriptadores-->
                 </div>
             </div><!-- cierre del contenedor izquierda-->
@@ -49,17 +49,17 @@
                 
                 <div id="resultado_final">
                     <img class="toy ocultar_toy" src="img/Muñeco.png" alt="muñeco con lupa">
-                    <textarea class="resultado_texto" rows="4" col="10" placeholder="Ningún mensaje fue encontrado"></textarea>
+                    <textarea class="resultado_texto" placeholder="Ningún mensaje fue encontrado"></textarea>
                 </div> <!-- cierre dela zona de resultado-->
                 
                 
-                <div class="resultado_informativo">
+                <div class="resultado_informativo ocultar">
                     <p>Ingresa el texto que desees encriptar o <br>desencriptar.</p>
                 </div><!-- cierre del mensaje informativo-->
                 
                 
                 <div class="contenedor_copiar">
-                    <input type="button" class="boton_copiar ocultar_boton-copiar" value="Copiar">
+                    <input type="button" class="boton_copiar ocultar_boton-copiar" onclick=botonCopiar(); value="Copiar">
                 </div><!-- cierre del boton copiar-->
                 
                 <!--
@@ -73,7 +73,9 @@
 
         
          <footer id="pie">
-            <p>&copy Copyright IVG - 2024</p>
-        </footer> 
+            <p>&copy Copyright Ismael Vasco - 2024</p>
+        </footer>
+
+        <script src="js/app2.js" defer></script>
     </body>
 </html>
