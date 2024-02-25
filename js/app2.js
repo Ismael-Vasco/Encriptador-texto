@@ -37,19 +37,19 @@ function caracteres(texto){
     var valor = "";
     if (caracteresEspeciales.test(texto)){
         valor=true;
-        console.log(`hay carecteres especiales: ${valor}`);
+        //console.log(`hay carecteres especiales: ${valor}`);
         
     }else if(mayusculas.test(texto)){
         valor=true;
-        console.log(`hay mayusculas: ${valor}`);
+        //console.log(`hay mayusculas: ${valor}`);
 
     }else if(acentos.test(texto)){
         valor=true;
-        console.log(`hay acentos: ${valor}`);
+        //console.log(`hay acentos: ${valor}`);
 
     }else if(espacios.test(texto)){
         valor=false;
-        console.log(`hay espacios en blanco: ${valor}`);
+        //console.log(`hay espacios en blanco: ${valor}`);
 
     }
     
@@ -94,7 +94,7 @@ function botonEncriptar(){
     console.log(`hay mayusculas: ${mayusculas.test(textoInicial.value)}`);
     console.log(`hay acentos: ${acentos.test(textoInicial.value)}`);
     */
-    console.log(caracteres(textoInicial.value));
+    //console.log(caracteres(textoInicial.value));
     
     if (caracteres(textoInicial.value)==true){
         Swal.fire({
@@ -119,7 +119,7 @@ function botonEncriptar(){
 
 // Funcionalidad al boton desencriptar
 function botonDesencriptar(){
-    console.log(caracteres(textoInicial.value));
+    //console.log(caracteres(textoInicial.value));
     if(caracteres(textoInicial.value)==true){
         Swal.fire({
           title: "Corrige!",
