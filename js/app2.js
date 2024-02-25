@@ -8,9 +8,10 @@ var botonCopiarOculta = document.querySelector(".boton_copiar");
 
 
 // Expresiones regulares
-const caracteresEspeciales= /\W/g; // Todo lo que no sea alfanumerico
-const mayusculas= /[A-Z]/g; // Letras minusculas.
+const caracteresEspeciales= /[^ A-Za-z0-9_]/; // Todo lo que no sea alfanumerico
+const mayusculas= /[A-Zá-ź]/g; // Letras minusculas.
 const acentos = /[á-ź]/g; // acentos
+const espacios =/\s/g; // espacios en blanco
 
 
 
@@ -36,17 +37,20 @@ function caracteres(texto){
     var valor = "";
     if (caracteresEspeciales.test(texto)){
         valor=true;
-         //console.log(`hay carecteres especiales: ${valor}`);
-    }
-    
-    if(mayusculas.test(texto)){
+        console.log(`hay carecteres especiales: ${valor}`);
+        
+    }else if(mayusculas.test(texto)){
         valor=true;
-        //console.log(`hay mayusculas: ${valor}`);
-    }
-    
-    if(acentos.test(texto)){
+        console.log(`hay mayusculas: ${valor}`);
+
+    }else if(acentos.test(texto)){
         valor=true;
-        //console.log(`hay acentos: ${valor}`);
+        console.log(`hay acentos: ${valor}`);
+
+    }else if(espacios.test(texto)){
+        valor=false;
+        console.log(`hay espacios en blanco: ${valor}`);
+
     }
     
     return valor;
@@ -69,6 +73,7 @@ function ocultar(){
     munieco.style.display="none";
     contenedor.style.display="none";
     botonCopiarOculta.style.display="block";
+    //document.querySelector(".texto").value="";
 }
 //función para traer los objetos de vuelta
 function aparecer(){
@@ -89,7 +94,9 @@ function botonEncriptar(){
     console.log(`hay mayusculas: ${mayusculas.test(textoInicial.value)}`);
     console.log(`hay acentos: ${acentos.test(textoInicial.value)}`);
     */
-    if (caracteres(textoInicial.value)){
+    console.log(caracteres(textoInicial.value));
+    
+    if (caracteres(textoInicial.value)==true){
         Swal.fire({
           title: "Corrige!",
           text: "Puede haber acentos, mayusculas o caracteres especiales en el texto que ingresaste!",
@@ -112,7 +119,8 @@ function botonEncriptar(){
 
 // Funcionalidad al boton desencriptar
 function botonDesencriptar(){
-    if(caracteres(textoInicial.value)){
+    console.log(caracteres(textoInicial.value));
+    if(caracteres(textoInicial.value)==true){
         Swal.fire({
           title: "Corrige!",
           text: "Puede haber acentos, mayusculas o caracteres especiales en el texto que ingresaste!",
